@@ -48,6 +48,9 @@ For the UPduino FPGA board, the example project has the 8-bits of binary data fr
 For the iCEBreaker FPGA board it supports a two digit hex 7-segment output on PMOD1A along with 8-bit binary output on PMOD 1B.
 ![iCEBreadker FPGA board](./pics/iCEBreaker_FPGA.jpg)
 
+For the nandland go-board it supports the built in two digit hex 7-segment output.
+![go-board FPGA board](./pics/go-board_FPGA.jpg)
+
 Both boards show a red LED when the program has halted (via HLT) and will flash an LED on each T-cycle (with a slow clock).
 
 The included program is a pointless counting test, but you can enter another program into the 16 memory locations in the `cpu_mem.sv` file.  Several example programs can be found here: [Programs and more Commands for the Ben Eater 8-Bit Breadboard Computer](https://theshamblog.com/programs-and-more-commands-for-the-ben-eater-8-bit-breadboard-computer/) (note that some fancy ones require some new opcodes to be implemented to replace the "unused" opcodes - a nice exercise).
