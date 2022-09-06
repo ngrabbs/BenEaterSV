@@ -11,7 +11,7 @@
 `default_nettype none               // mandatory for Verilog sanity
 `timescale 1ns/1ps                  // mandatory to shut up Icarus Verilog
 
-`include "cpu_package.svh"
+`include "../rtl/cpu_package.svh"
 
 module cpu_core(
     output      logic       hlt_o,              // CPU halted
