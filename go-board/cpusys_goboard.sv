@@ -15,14 +15,14 @@
 `default_nettype none             // mandatory for Verilog sanity
 `timescale 1ns/1ps
 
-`include "cpu_package.svh"
+`include "../rtl/cpu_package.svh"
 
 module cpusys_goboard (
     // output gpio
     input wire  logic   CLK,            // 12M clock
-    input wire  logic   BTN_N,          // UBUTTON for reset
-    output      logic   LEDR_N,         // red LED for halt
-    output      logic   LEDG_N,         // green LED for clock
+    input wire  logic   i_Switch_1,     // UBUTTON for reset
+    output      logic   o_LED_1,        // LED for halt
+    output      logic   o_LED_2,        // LED for clock
     output      logic   o_LED_3,
     output      logic   o_LED_4,
 
@@ -66,7 +66,7 @@ logic [18:0]        slow_clk;
 always_ff @(posedge clk) begin
     reset       <= !reset_ff1;
     reset_ff1   <= reset_ff0;
-    reset_ff0   <= ~BTN_N;
+    reset_ff0   <= ~i_Switch_1;
 end
 
 always_ff @(posedge clk) begin
@@ -84,8 +84,8 @@ always_ff @(posedge clk) begin
 end
 
 // NOTE: LEDs are inverse logic (so LED 0=on, 1=off)
-assign LEDR_N       = (slow_clk[7:0] == '0) ? !halt : 1'b0;     // red when halted
-assign LEDG_N       = (slow_clk[18:15] == '0) ? halt : 1'b0;    // green clock pulse
+assign o_LED_1      = (slow_clk[7:0] == '0) ? !halt : 1'b0;     // red when halted
+assign o_LED_2      = (slow_clk[18:15] == '0) ? halt : 1'b0;    // green clock pulse
 
 // === instantiate main module
 cpu_main main(

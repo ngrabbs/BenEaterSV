@@ -89,10 +89,6 @@
 		"files.associations": {
 			"*.sv": "systemverilog"
 		},
-		"workbench.colorCustomizations": {
-			"terminal.foreground": "#18E818",
-			"terminalCursor.foreground": "#E0E0E0",
-		},
 		"editor.wordWrapColumn": 200,
 		"files.trimTrailingWhitespace": true,
 		"rewrap.autoWrap.enabled": true,
