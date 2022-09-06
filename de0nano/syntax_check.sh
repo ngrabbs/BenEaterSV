@@ -4,7 +4,7 @@ FILES_WITH_ERRORS=""
 for filename in `ls *.bdf *.v *.sv`
 do
 # Perform a syntax check on the specified file
-    quartus_map cpysys_de0nano --analyze_file=$filename
+    quartus_map cpusys_de0nano --analyze_file=$filename
   # If the exit code is non-zero, the file has a syntax error
     if [ $? -ne 0 ]
     then
