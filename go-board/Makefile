@@ -25,11 +25,11 @@ DEFINES :=
 SRC := $(wildcard *.sv) $(wildcard $(SRCDIR)/*.sv)
 #   Verilog include files for design
 INC := $(wildcard *.svh) $(wildcard $(SRCDIR)/*.svh)
-#   iCEBreaker pin definitions file
+#   go-board pin definitions file
 PIN_DEF := goboard.pcf
-#   iCEBreaker FPGA device type
+#   go-board FPGA device type
 DEVICE := hx1k
-#   iCEBreaker FPGA package
+#   go-board FPGA package
 PACKAGE := vq100
 
 # log output directory for tools (spammy, but detailed useful info)
